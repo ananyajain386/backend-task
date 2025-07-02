@@ -6,7 +6,7 @@ from django.http import JsonResponse, FileResponse, HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.conf import settings
-from auth.models import Role
+from auth_app.models import UserRole
 from .models import File
 
 # Constants
@@ -22,7 +22,7 @@ fernet = Fernet(FERNET_KEY)
 
 # Utils
 def get_user_role(user):
-    role_obj = Role.objects.filter(user=user).last()
+    role_obj = UserRole.objects.filter(user=user).last()
     return role_obj.role if role_obj else None
 
 def is_valid_file(file):

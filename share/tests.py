@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from django.core.files.uploadedfile import SimpleUploadedFile
-from auth.models import UserRole
+from auth_app.models import UserRole
 from .models import File
 from share.views import fernet
 
