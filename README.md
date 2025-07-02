@@ -17,7 +17,7 @@ A secure file-sharing system built with Django (no DRF, no Django admin) and MyS
 ### 1. Clone the Repo
 ```bash
 git clone <repo-url>
-cd Ez-task
+cd backend-task
 ```
 
 ### 2. Create & Activate Virtual Environment
@@ -99,15 +99,3 @@ python manage.py runserver
   "code": "1234"
 }
 ```
-
-
-## Deployment Notes
-- Use Gunicorn + Nginx for production
-- Set `DEBUG=False` and configure `ALLOWED_HOSTS`
-- Store `.env` securely (never commit to git)
-- Use HTTPS
-
-## Testing
-- Use Postman or curl for API testing
-- Write Django `TestCase` classes for automated tests (recommended)
-
