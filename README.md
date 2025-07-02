@@ -94,7 +94,6 @@ python manage.py runserver
 {
   "email": "user@example.com"
 }
-// then
 {
   "email": "user@example.com",
   "code": "1234"
