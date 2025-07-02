@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from django.core.files.uploadedfile import SimpleUploadedFile
-from user_auth.models import Role
+from auth.models import UserRole
 from .models import File
 from share.views import fernet
 
@@ -14,8 +14,8 @@ class SecureFileShareTests(TestCase):
 
         self.ops_user = User.objects.create_user('ops@example.com', 'ops@example.com', 'Test@1234')
         self.client_user = User.objects.create_user('client@example.com', 'client@example.com', 'Test@1234')
-        Role.objects.create(user=self.ops_user, role='Ops')
-        Role.objects.create(user=self.client_user, role='Client')
+        UserRole.objects.create(user=self.ops_user, role='Ops')
+        UserRole.objects.create(user=self.client_user, role='Client')
 
         self.file_data = b"Test content"
         self.valid_file = SimpleUploadedFile("sample.docx", self.file_data, content_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document")

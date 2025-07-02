@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from user_auth.models import BaseModel
+from auth.models import BaseModel
 
 class File(BaseModel):
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
