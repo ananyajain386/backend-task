@@ -1,15 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class DeletedManager(models.Manager):
-    def get_queryset(self):
-        return super(DeletedManager, self).get_queryset().exclude(status=False)
-    
+
 class BaseModel(models.Model):
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
-    objects = DeletedManager()
 
     class Meta:
         abstract = True
