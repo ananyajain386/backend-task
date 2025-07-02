@@ -66,10 +66,10 @@ python manage.py runserver
 ## API Endpoints
 
 ### **User APIs**
-- `POST /api/verify/` — Request/verify email code
-- `POST /api/user_registration/` — Register (after verifying email)
-- `POST /api/login_view/` — Login
-- `GET /api/logout_view/` — Logout
+- `POST /api/verify_email/` — Request/verify email code
+- `POST /api/register_user/` — Register (after verifying email)
+- `POST /api/login_user/` — Login
+- `GET /api/logout_user/` — Logout
 
 ### **File APIs**
 - `POST /api/upload/` — Upload file (Ops only, form-data: file)
